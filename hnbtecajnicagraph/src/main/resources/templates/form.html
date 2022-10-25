@@ -1,0 +1,22 @@
+<html xmlns:th="https://www.thymeleaf.org">
+
+    <head> 
+        <title>Exchange form</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+
+<body>
+    
+    <form action="#" method="post" th:action="@{/form}" th:object="${htmlmodel}">
+        <h1>Submit form for the exchange rate project</h1><br>
+        <p>Dates must be in the [YYYY-MM-DD] format!</p><br>
+        <p>Insert start date: <input type="text" th:field="*{fromdate}"></p>
+        <p>  Insert end date: <input type="text" th:field="*{todate}"></p>
+        <p>  Insert currency code: <input type="text" th:field="*{currencyname}"></p>
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+
+
+</html>
