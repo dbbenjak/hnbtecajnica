@@ -1,0 +1,7 @@
+Aplikacija se jednostavno pokreće iz IDE-a pritiskom na gumb "Run" nakon što se pozicionira u glavnu klasu "HnbApplication" ili u neku srodnu klasu iz istog direktorija.
+
+Alternativno, aplikacija se može pokrenuti preko CLI-ja korištenjem pripadne JAR datoteke i naredbe "java -jar [ime datoteke].jar". JAR datoteka se jednostavno može napraviti na način da se prvo pozicionira u datoteku pom.xml, a zatim se klikne na Run As > Maven Build... i u odjeljku Goals upiše "package". Pokretanjem će se u direktoriju "target" stvoriti odgovarajuća JAR datoteka, a pozicioniranjem u taj direktorij i unošenjem spomenute naredbe preko CLI-ja će se pokrenuti aplikacija.
+
+U oba slučaja nisu potrebni nikakvi parametri niti korisnički input. Pokretanjem aplikacije se automatski pokreće potprogram koji dohvaća podatke i prezentira ih korisniku, a nakon prikaza podataka se program automatski gasi.
+
+Instrukcije vrijede za Eclipse i Spring Tool Suite IDE te mogu biti nominalno drukčije za druge IDE-jeve.

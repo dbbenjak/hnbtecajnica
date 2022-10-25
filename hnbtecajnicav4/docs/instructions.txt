@@ -1,0 +1,2 @@
+Upute za korištenje i uvod u Jasper Reports sustav su iste kao u prethodnoj verziji aplikacije te su dostupne ovdje: https://bitbucket.org/ajovanichtc/hnbtecajnicav3/src/master/docs/HNBTecajnica.docx
+Razlika u odnosu na prethodnu verziju jest što se reporti pune iz kolekcije Java Beanova koju im šalje sam program, a ne iz baze podataka kao u prethodnoj verziji.

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Table_Based" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fc97a963-c0b6-4c19-a348-7e2773e092a3">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="H2 data adapter"/>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#EFEFEF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="tableDataset" uuid="d59ed3c0-e577-41ba-9a72-2ddc7bc47f21">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="H2 data adapter"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="dateTable" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[select * from exchange where excdate='$P!{dateTable}']]>
+		</queryString>
+		<field name="COUNTRY" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="COUNTRY"/>
+			<property name="com.jaspersoft.studio.field.label" value="COUNTRY"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="CURRENCYCODE" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CURRENCYCODE"/>
+			<property name="com.jaspersoft.studio.field.label" value="CURRENCYCODE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="CURRENCYNAME" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="CURRENCYNAME"/>
+			<property name="com.jaspersoft.studio.field.label" value="CURRENCYNAME"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="UNIT" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.name" value="UNIT"/>
+			<property name="com.jaspersoft.studio.field.label" value="UNIT"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="BUYVALUE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="BUYVALUE"/>
+			<property name="com.jaspersoft.studio.field.label" value="BUYVALUE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="MEANVALUE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="MEANVALUE"/>
+			<property name="com.jaspersoft.studio.field.label" value="MEANVALUE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+		<field name="SELLVALUE" class="java.math.BigDecimal">
+			<property name="com.jaspersoft.studio.field.name" value="SELLVALUE"/>
+			<property name="com.jaspersoft.studio.field.label" value="SELLVALUE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+		</field>
+	</subDataset>
+	<parameter name="date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<summary>
+		<band height="146">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="45" backcolor="#FFFFFF" uuid="6321f5e3-86eb-444f-acc1-8daaaa0d6c60"/>
+				<textField>
+					<reportElement x="20" y="50" width="300" height="43" forecolor="#000000" uuid="9e48917a-7b59-4ffd-baad-725f45563194"/>
+					<textElement>
+						<font fontName="DejaVuSansFamily" size="20" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Tečaj na datum " + $P{date}]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement x="20" y="100" width="555" height="60" uuid="d19ffa50-e6a4-42af-836c-4d5ecb15db9c">
+						<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+						<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+						<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					</reportElement>
+					<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="tableDataset" uuid="c6cb0407-0dec-4c4a-be04-1bea64ce8eff">
+							<datasetParameter name="dateTable">
+								<datasetParameterExpression><![CDATA[$P{date}]]></datasetParameterExpression>
+							</datasetParameter>
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+						<jr:column width="61" uuid="7db4fbea-6ab8-4ed2-90e0-99fd2d833d41">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Redni broj"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="1f7c4458-1e39-4379-9063-aca9bd720384"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="724c4dbf-a46d-4c22-938b-9aa66b2face5">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Država"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="d5b32c19-a491-42f2-a825-2c0fafdc04fa"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{COUNTRY}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="495d65b1-0fc1-497e-b225-56c0cfc0ce56">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Šifra valute"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="b80202ce-1eee-4604-9659-55934ce1dd3b"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{CURRENCYCODE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="2ce0b289-1ffe-4d49-be26-4a8e0885c91d">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Ime valute"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="b0e14763-f5f2-4bb5-9d6d-faa4d06cba4a"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{CURRENCYNAME}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="cf480e86-1ca0-4e80-9f20-7deda7655b52">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Jedinica"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="2f2e6c8f-bace-43e1-b56c-b155b9318f60"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{UNIT}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="87481323-6c4e-4559-8808-f4201026b94a">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Kupovna vrijednost"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="3124045c-a000-45b8-a29e-557f0f655519"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{BUYVALUE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="554891ef-a883-429a-b28e-582ae4e16956">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column7"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Srednja vrijednost"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="b364ded0-9f6d-464a-ad3d-873bf3dc23ba"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{MEANVALUE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="897829c6-7c88-49f5-8b96-524936cdb7d3">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column8"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Prodajna vrijednost"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="fcea3f90-a197-48b0-b3a2-d90a3a50d5cb"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{SELLVALUE}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="61" uuid="125015f5-3685-4e6f-aaa4-4891963b44fb">
+							<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column9"/>
+							<jr:columnHeader style="Table_CH" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement stretchType="ContainerHeight" mode="Transparent" x="0" y="0" width="61" height="30" forecolor="#006699" backcolor="#E6E6E6" uuid="3a9365e8-b8bd-4d42-9b8b-a75dc5dd8bbf"/>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="DejaVuSansFamily" size="12" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Konstanta"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell style="Table_TD" height="30">
+								<textField textAdjust="StretchHeight">
+									<reportElement key="" stretchType="ContainerHeight" x="0" y="0" width="61" height="30" uuid="e6cfb8ec-176c-4a95-a89e-28fdbe06c54a"/>
+									<box leftPadding="2"/>
+									<textElement textAlignment="Left" verticalAlignment="Top">
+										<font fontName="DejaVuSansFamily" size="7" isBold="false"/>
+									</textElement>
+									<textFieldExpression><![CDATA["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:table>
+				</componentElement>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

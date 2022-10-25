@@ -1,0 +1,7 @@
+Aplikacija se jednostavno pokreće iz IDE-ja, odnosno direktno iz JAR datoteke. Prilikom pokretanja od korisnika se traži unos dva datuma (početnog i završnog) u [YYYY-MM-DD] formatu. U slučaju neispravnog unosa program javlja grešku i završava s radom. U slučaju ispravnog unosa će se u bazu unijeti podaci o tečajnim listama za sve datume između početnog i završnog (uključivo), program će javiti uspješno izvršavanje i završiti s radom.
+
+S obzirom da se koristi H2 baza podataka u server načinu, korisnik mora osigurati da je baza otvorena prije pokretanja programa, za razliku od embedded načina gdje baza ne smije nigdje drugdje biti otvorena, već ju otvara sam program. U slučaju da baza nije prethodno otvorena, a program i dalje radi u server načinu, doći će do greške i rad programa će se zaustaviti. Način rada baza može se lako promijeniti manipuliranjem vrijednosti varijable DB_URL u klasi ExchangeRepository, koja je u kodu označena komentarom. 
+
+Program radi "as is", odnosno potrebno ga je samo pokrenuti (uz prethodno specificirane zahtjeve vezane uz bazu, ovisno o načinu korištenja) i dati mu input vrijednosti datuma. Program automatski stvara novu bazu u koju se spremaju tražene tečajne liste. 
+
+Verzija korištene H2 baze podataka: 2.1.214

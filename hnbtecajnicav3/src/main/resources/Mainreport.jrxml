@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Mainreport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cfc0be69-d408-4029-9289-d114f39e37e3">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="H2 data adapter"/>
+	<parameter name="fromDate" class="java.lang.String"/>
+	<parameter name="toDate" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select distinct excdate from exchange]]>
+	</queryString>
+	<field name="EXCDATE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="EXCDATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="EXCDATE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="EXCHANGE"/>
+	</field>
+	<group name="EXCDATE">
+		<groupExpression><![CDATA[$F{EXCDATE}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="560" height="80" uuid="ce47a545-584c-4a6e-9a7d-114a9c784cb5"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="40" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tečajna lista Hrvatske narodne banke za period od " + $P{fromDate} + " do " + $P{toDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="240" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="15" width="560" height="210" uuid="18828768-9215-441c-8169-3fdfef409466"/>
+				<subreportParameter name="date">
+					<subreportParameterExpression><![CDATA[$F{EXCDATE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA["Subreport.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
